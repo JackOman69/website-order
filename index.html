@@ -6,17 +6,6 @@
 	<title>Document</title>
 </head>
 <body>
-<!--   <script>
-      $(function(){
-     var parent = $('.column'), max = parent[0].scrollHeight - parent[0].offsetHeight - 20;
-     parent.on('scroll', function(event) {
-        var s = $(this).scrollTop(),
-        f = $('>:first', parent),l = $('>:last', parent);
-        if(s > max) {f.appendTo(parent); parent.scrollTop(s - f.height())}
-        if(s < 5) {l.prependTo(parent);parent.scrollTop(s + l.height()) }
-      }).scrollTop(5)
-			});  
-</script> -->
 	<!-- Main wrapper of website -->
 	<main class="main-wrapper"> 
 		<!-- Header -->
@@ -145,29 +134,37 @@
 					</h1>
 					<!-- Form section for communication -->
 					<div class="main-form">
-						<form action="post" id="form-contact">
+						<form id="form-contact">
 							<div class="first-row">
-								<div class="form-group">
+								<div class="form-group" id="i_name">
 									<label for="input-name">Ваше имя*</label>
-									<input type="text" name="name" class="form-control f-row" placeholder="Введите ваше имя" id="input-name" required>
+									<input type="text" name="name" class="form-control f-row" placeholder="Введите ваше имя" id="input-name">
 								</div>
-								<div class="form-group">
+								<div class="form-group" id="i_email">
 									<label for="input-email">Ваш email*</label>
-									<input type="text" name="name" class="form-control f-row" placeholder="Введите ваш email" id="input-email" required>
+									<input type="text" name="name" class="form-control f-row" placeholder="Введите ваш email" id="input-email">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="input-social">Ваши социальные сети для общения</label>
 								<input type="text" name="name" class="form-control f-social" placeholder="Введите социальные сети для общения" id="input-social" >
 							</div>
-							<div class="form-group">
+							<div class="form-group" id="textarea">
 								<label for="form-message">Ваше сообщение мне*</label>
-								<textarea name="message" class="form-control f-text" rows="5" placeholder="Введите удобные вам способы общения и график для занятий" required></textarea>
+								<textarea name="message" class="form-control f-text" rows="5" placeholder="Введите удобные вам способы общения и график для занятий"></textarea>
 							</div>
 							<div class="form-group">
-								<button type="submit" class="form-control form-button">
+								<button type="submit" class="form-control form-button" id="myBtn" data-toggle="modal" data-target="#myModal">
 									<span>Отправить</span>
 								</button>
+								<!-- Modal content-->
+								<div id="myModal" class="modal">
+								  <div class="modal-content">
+								    <span class="close">&times;</span>
+								    <p style="color:black;">Ваша заявка успешно отправлена!</p>
+								  </div>
+								</div>
+								<!-- End of modal content -->
 								<p>* - Необходимые поля для заполнения</p>
 							</div>
 						</form>
@@ -188,5 +185,11 @@
 		<!-- End of main content -->
 	</main>
 	<!-- End of main content -->
+
+	<!-- Javascript code -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="assets/scripts/script.js"></script>
+  <!-- End of JS code -->
 </body>
 </html>
